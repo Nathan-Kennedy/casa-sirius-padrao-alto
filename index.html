@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa Sirius · padrão alto</title>
+<meta name="description" content="Casa Sirius: casa térrea de 83,26 m² em lote 6 × 30, padrão alto. Projeto e construção INFINITI Engenharia.">
+<meta property="og:title" content="Casa Sirius · padrão alto · INFINITI Engenharia">
+<meta property="og:description" content="Fachada, planta, ambientes, acabamentos, escopo e passeio 3D.">
+<meta property="og:image" content="https://nathan-kennedy.github.io/casa-sirius-padrao-alto/img/fachada-frente.jpg">
+<meta property="og:url" content="https://nathan-kennedy.github.io/casa-sirius-padrao-alto/">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/logo-infiniti.png">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,400;112,600;125,700&family=Spline+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: pagina de apresentacao de projeto, como um caderno de arquitetura: imagem grande, legendas tecnicas (m2, materiais, marcas),
+   secoes por parte da casa. Paleta tirada da propria casa: reboco off-white, taupe do portico, areia do travertino, preto das esquadrias. */
+:root {
+  --reboco: #f5f2ec;
+  --papel: #fbfaf7;
+  --tinta: #1d1c1a;
+  --tinta-2: #5f5a52;
+  --taupe: #8c8174;
+  --travertino: #cdb894;
+  --linha: #e2ddd3;
+  --oliva: #6d7350;
+  --f-titulo: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-texto: "Spline Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --reboco: #161513; --papel: #1d1c19; --tinta: #f1ede6; --tinta-2: #b4ada2; --taupe: #a99d8e; --travertino: #d8c4a0; --linha: #34312c; --oliva: #a3a97f; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --reboco: #161513; --papel: #1d1c19; --tinta: #f1ede6; --tinta-2: #b4ada2; --taupe: #a99d8e; --travertino: #d8c4a0; --linha: #34312c; --oliva: #a3a97f; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--reboco); color: var(--tinta); font: 400 1rem/1.6 var(--f-texto); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--reboco); }
+.guia { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.miolo { max-width: 1180px; margin: 0 auto; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--travertino); outline-offset: 3px; }
+
+header.topo { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--reboco) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--linha); }
+header.topo .miolo { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 12px; }
+.marca { font: 700 1rem/1 var(--f-titulo); font-stretch: 125%; letter-spacing: 0.02em; text-decoration: none; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { font: 600 0.78rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--tinta-2); }
+nav a:hover { color: var(--tinta); }
+
+.capa { padding-block: 28px 0; }
+.capa figure { margin: 0; position: relative; }
+.capa img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; cursor: zoom-in; }
+.capa-texto { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: end; padding-block: 28px 8px; }
+h1 { margin: 0; font: 700 clamp(2.2rem, 5.5vw, 4.4rem)/1 var(--f-titulo); font-stretch: 125%; letter-spacing: -0.01em; text-wrap: balance; }
+h1 span { color: var(--taupe); }
+.capa-texto p { margin: 0; color: var(--tinta-2); max-width: 46ch; }
+.fichas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--tinta); margin-top: 20px; }
+.ficha { padding: 14px 16px 14px 0; border-right: 1px solid var(--linha); }
+.ficha:last-child { border-right: 0; }
+.ficha b { display: block; font: 700 1.5rem/1.1 var(--f-titulo); font-stretch: 112%; font-variant-numeric: tabular-nums; }
+.ficha small { color: var(--tinta-2); font-size: 0.82rem; }
+
+section { padding-block: 64px 8px; }
+.rotulo { font: 600 0.76rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe); margin: 0 0 10px; }
+h2 { margin: 0 0 22px; font: 700 clamp(1.6rem, 3.2vw, 2.4rem)/1.1 var(--f-titulo); font-stretch: 118%; text-wrap: balance; }
+.intro { color: var(--tinta-2); max-width: 62ch; margin: -8px 0 26px; }
+
+.grade-fachada { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+figure.quadro { margin: 0; }
+figure.quadro img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; cursor: zoom-in; background: var(--linha); }
+figcaption { font-size: 0.85rem; color: var(--tinta-2); padding-top: 8px; }
+
+.ambiente { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 28px; padding-block: 26px; border-top: 1px solid var(--linha); align-items: start; }
+.ambiente:nth-of-type(even) .fotos { order: 2; }
+.ambiente .fotos { display: grid; gap: 12px; }
+.ambiente h3 { margin: 0 0 4px; font: 700 1.35rem/1.15 var(--f-titulo); font-stretch: 112%; }
+.area { font: 600 0.8rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.1em; color: var(--taupe); font-variant-numeric: tabular-nums; }
+.ambiente p { color: var(--tinta-2); margin: 12px 0; }
+.ambiente ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.ambiente li { padding-left: 16px; position: relative; font-size: 0.93rem; }
+.ambiente li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; background: var(--travertino); }
+
+.areas { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.areas td { padding: 10px 0; border-bottom: 1px solid var(--linha); }
+.areas td:last-child { text-align: right; font-weight: 500; }
+.areas tr.total td { border-top: 1px solid var(--tinta); border-bottom: 0; font: 700 1.05rem var(--f-titulo); font-stretch: 112%; }
+.duas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; }
+
+.produtos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--tinta); }
+.produto { padding: 18px 18px 18px 0; border-bottom: 1px solid var(--linha); min-width: 0; }
+.produto .onde { font: 600 0.72rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); }
+.produto b { display: block; font-weight: 500; margin: 6px 0 2px; }
+.produto span { color: var(--tinta-2); font-size: 0.88rem; }
+.amostras { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.amostra { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--tinta-2); }
+.amostra i { width: 28px; height: 28px; display: inline-block; border: 1px solid var(--linha); }
+
+.tresd { background: var(--tinta); color: var(--reboco); margin-top: 64px; }
+.tresd .miolo { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; align-items: center; padding-block: 56px; }
+.tresd h2 { color: var(--reboco); }
+.tresd p { color: color-mix(in srgb, var(--reboco) 75%, var(--tinta)); margin: 0 0 22px; max-width: 52ch; }
+.botao { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; background: var(--travertino); color: #1d1c1a; text-decoration: none; font: 600 0.9rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.06em; text-transform: uppercase; }
+.botao:hover { filter: brightness(1.05); }
+.tresd ol { margin: 0; padding-left: 20px; color: color-mix(in srgb, var(--reboco) 80%, var(--tinta)); display: grid; gap: 8px; font-size: 0.93rem; }
+
+footer { padding-block: 36px 48px; color: var(--tinta-2); font-size: 0.82rem; }
+footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+#zoom { position: fixed; inset: 0; z-index: 50; background: rgba(15, 14, 12, 0.94); display: grid; place-items: center;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); cursor: zoom-out; }
+#zoom[hidden] { display: none; }
+#zoom img { max-height: 86vh; width: auto; }
+#zoom p { color: #e9e4da; text-align: center; margin: 10px 0 0; font-size: 0.9rem; }
+
+/* Isometricas: cada ambiente visto de cima, como maquete cortada. Prancha sempre clara (as imagens sao do modelo, fundo branco). */
+.maquetes { display: grid; gap: 18px; }
+.maquete { border-top: 1px solid var(--tinta); padding-top: 14px; }
+.maquete header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.maquete h3 { margin: 0; font: 700 1.2rem/1.15 var(--f-titulo); font-stretch: 112%; }
+.maquete header span { font: 600 0.74rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); font-variant-numeric: tabular-nums; }
+.maquete .par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.prancha { margin: 0; background: #ffffff; border: 1px solid var(--linha); position: relative; }
+.prancha img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; padding: 4%; cursor: zoom-in; }
+.prancha figcaption { position: absolute; left: 12px; bottom: 10px; padding: 0; font: 600 0.68rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8174; }
+.maquetes .quatro { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.maquetes .quatro .maquete header { flex-direction: column; gap: 2px; }
+@media (max-width: 980px) { .maquetes .quatro { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .maquete .par { grid-template-columns: minmax(0, 1fr); } .maquetes .quatro { gap: 14px; } }
+
+/* Planta humanizada (etapa 58): imagem alta e estreita (lote 6 x 30) ao lado do texto */
+.planta { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 40px; align-items: start; }
+.planta figure { margin: 0; background: #e2ead6; border: 1px solid var(--linha); }
+.planta img { width: 100%; height: auto; cursor: zoom-in; }
+.planta .lado { position: sticky; top: 90px; }
+.planta ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--tinta-2); }
+/* marca-infiniti (21/10/2026): logo da INFINITI Engenharia no cabecalho e no rodape */
+.marca { display: inline-flex; align-items: center; gap: 10px; }
+.marca img, .assina img { width: 30px; height: 30px; object-fit: contain; }
+.marca .infiniti-escuro, .assina .infiniti-escuro { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .infiniti-claro { display: none; } :root:not([data-theme="light"]) .infiniti-escuro { display: inline; } }
+:root[data-theme="dark"] .infiniti-claro { display: none; } :root[data-theme="dark"] .infiniti-escuro { display: inline; }
+.assina { display: inline-flex; align-items: center; gap: 10px; color: var(--tinta); font-weight: 500; }
+.assina small { display: block; color: var(--tinta-2); font-weight: 400; }
+
+@media (max-width: 820px) { .planta { grid-template-columns: minmax(0, 1fr); } .planta figure { max-width: 420px; margin: 0 auto; } .planta .lado { position: static; } }
+
+@media (max-width: 820px) {
+  .capa-texto, .ambiente, .duas, .tresd .miolo { grid-template-columns: minmax(0, 1fr); }
+  .ambiente:nth-of-type(even) .fotos { order: 0; }
+  .produtos { grid-template-columns: minmax(0, 1fr); }
+  .fichas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ficha:nth-child(2) { border-right: 0; }
+  .grade-fachada { grid-template-columns: minmax(0, 1fr); }
+  nav { gap: 12px; }
+}
+@media (prefers-reduced-motion: no-preference) { .capa img { animation: entra 0.9s ease-out both; } @keyframes entra { from { opacity: 0.6; transform: scale(1.01); } to { opacity: 1; transform: none; } } }
+
+/* escopo-fornecimento (25/10/2026): escopo do fornecimento (nao incluso) e memorial descritivo */
+.escopo .lista { margin: 0 0 8px; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--tinta); }
+.escopo .lista li { padding: 12px 0 12px 22px; border-bottom: 1px solid var(--linha); position: relative; font-size: 0.95rem; }
+.escopo .lista li::before { content: ""; position: absolute; left: 0; top: 1.28em; width: 10px; height: 2px; background: var(--taupe); }
+.escopo h3 { margin: 34px 0 12px; font: 700 1.25rem/1.15 var(--f-titulo); font-stretch: 112%; }
+.escopo h2 small { display: block; margin-top: 8px; font: 600 0.8rem var(--f-titulo); font-stretch: 112%; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); }
+.escopo .memorial { border-left: 3px solid var(--travertino); padding: 4px 0 4px 18px; max-width: 72ch; color: var(--tinta-2); margin: 0; }
+.nao-incluso { display: inline-block; margin-left: 6px; padding: 0 6px; border: 1px solid var(--linha); font: 600 0.64rem/1.7 var(--f-titulo); font-stretch: 112%; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe); white-space: nowrap; vertical-align: 0.1em; }
+.aviso-escopo { font-size: 0.88rem; color: var(--tinta-2); max-width: 72ch; margin: -6px 0 24px; }
+.aviso-escopo a { color: var(--tinta); }
+@media (max-width: 820px) { .escopo .lista { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+<header class="topo guia">
+  <div class="miolo">
+    <a class="marca" href="#inicio"><img class="infiniti-claro" src="img/logo-infiniti.png" alt="INFINITI Engenharia"><img class="infiniti-escuro" src="img/logo-infiniti-branca.png" alt="INFINITI Engenharia"><span>Casa Sirius · padrão alto</span></a>
+    <nav aria-label="Seções">
+      <a href="#fachada">Fachada</a><a href="#planta">Planta</a><a href="#ambientes">Ambientes</a><a href="#maquetes">Em 3D</a><a href="#acabamentos">Acabamentos</a><a href="#tour3d">3D</a><a href="#escopo">Escopo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="capa guia" id="inicio">
+  <div class="miolo">
+    <figure><img src="img/fachada-frente.jpg" alt="Fachada frontal da casa, com muro, portão preto de lâminas e painel de porcelanato preto com veios brancos" data-legenda="Fachada frontal"></figure>
+    <div class="capa-texto">
+      <h1>Casa térrea <span>contemporânea</span> em lote 6 × 30</h1>
+      <p>Pórtico em volume único, painel de porcelanato preto com veios brancos na fachada, esquadrias pretas, muro com portão de lâminas e garagem coberta. Por dentro, cozinha planejada em L, suíte com banho em pedra e todos os ambientes pensados para o tamanho real de cada cômodo.</p>
+    </div>
+    <div class="fichas">
+      <div class="ficha"><b>83,26 m²</b><small>área construída</small></div>
+      <div class="ficha"><b>6 × 30 m</b><small>lote</small></div>
+      <div class="ficha"><b>2 quartos</b><small>1 suíte</small></div>
+      <div class="ficha"><b>2 banhos</b><small>e garagem coberta</small></div>
+    </div>
+  </div>
+</div>
+
+<section class="guia" id="fachada">
+  <div class="miolo">
+    <p class="rotulo">Fachada e acesso</p>
+    <h2>Um volume limpo, que se destaca na rua</h2>
+    <p class="intro">O pórtico emoldura a entrada e a garagem; o painel de porcelanato preto marca a parede do banho da frente. O muro da frente recebe portão de lâminas horizontais pretas com porta social, padrão de energia e hidrômetro. A rampa é feita em placas de concreto com grama entre elas, e as arandelas seguem pelo muro e pela garagem. A calçada tem piso tátil direcional e de alerta. Nas imagens, os muros aparecem rebocados e pintados; os muros laterais e de fundo são entregues chapiscados, sem reboco, emboço nem pintura.</p>
+    <div class="grade-fachada">
+      <figure class="quadro"><img loading="lazy" src="img/fachada-esquerda.jpg" alt="Fachada vista pela esquerda" data-legenda="Fachada, vista pela esquerda"><figcaption>Vista pela esquerda: o pórtico e o painel preto.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/fachada-direita.jpg" alt="Fachada vista pela direita" data-legenda="Fachada, vista pela direita"><figcaption>Vista pela direita: muro da frente, padrão de energia e acesso.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/vista-aerea.jpg" alt="Vista aérea da casa no lote" data-legenda="Vista aérea"><figcaption>Vista aérea: implantação no lote de 6 × 30 m.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/garagem.jpg" alt="Garagem coberta e entrada da casa" data-legenda="Garagem e entrada"><figcaption>Garagem coberta (21,7 m²) e porta de entrada. Piso em porcelanato 80 × 80 claro, acabamento natural antiderrapante, próprio para veículos.</figcaption></figure>
+      <figure class="quadro" style="grid-column:1/-1"><img loading="lazy" src="img/fachada-noite.jpg" alt="Fachada à noite, com arandelas e iluminação acesas" data-legenda="Fachada à noite"><figcaption>À noite: arandelas e luz de embutir acesas.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="guia" id="planta">
+  <div class="miolo">
+    <p class="rotulo">Planta</p>
+    <h2>A casa inteira, vista de cima</h2>
+    <div class="planta">
+      <figure><img loading="lazy" src="img/planta-humanizada.jpg" alt="Planta baixa humanizada do lote 6 × 30 com a casa, a garagem, o corredor lateral e o quintal" data-legenda="Planta baixa humanizada"></figure>
+      <div class="lado">
+        <p class="intro">Planta humanizada gerada direto do modelo do projeto: paredes em preto, pisos e móveis nas cores reais dos acabamentos escolhidos. Da rua para o fundo:</p>
+        <ol>
+          <li>Calçada com piso tátil, muro com portão e porta social, rampa em placas de concreto</li>
+          <li>Garagem coberta e, ao lado, o banho da suíte</li>
+          <li>Suíte e sala de estar</li>
+          <li>Banho social e lavanderia, pela circulação</li>
+          <li>Quarto</li>
+          <li>Cozinha com saída para o quintal em brita</li>
+          <li>Corredor lateral externo, do portão ao quintal</li>
+        </ol>
+        <p class="intro" style="margin-top:18px">O carro e os móveis são ilustrativos, para dar escala. Mobiliário e paisagismo além do previsto em projeto não integram o valor proposto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guia" id="ambientes">
+  <div class="miolo">
+    <p class="rotulo">Ambientes</p>
+    <h2>Cada cômodo no tamanho real</h2>
+    <p class="intro">Móveis e acabamentos escolhidos para caber de verdade em cada ambiente, com circulação livre e produtos encontrados no mercado.</p>
+    <p class="aviso-escopo">As imagens mostram a casa mobiliada e equipada, como sugestão de projeto. Mobiliário, eletrodomésticos, decoração, bancada da cozinha, torneiras e demais metais sanitários não integram o valor proposto (ver <a href="#escopo">Escopo do Fornecimento</a>).</p>
+
+    <article class="ambiente">
+      <div class="fotos">
+        <figure class="quadro"><img loading="lazy" src="img/sala-tv.jpg" alt="Sala de estar com painel off-white retroiluminado, prateleira e rack em carvalho claro" data-legenda="Sala de estar, parede da TV"></figure>
+        <figure class="quadro"><img loading="lazy" src="img/sala-sofa.jpg" alt="Sala de estar com sofá de linho e cortina" data-legenda="Sala de estar, sofá"></figure>
+      </div>
+      <div>
+        <h3>Sala de estar</h3><span class="area">7,1 m²</span>
+        <p>Painel off-white flutuante com LED em volta, prateleira de carvalho claro iluminada e rack suspenso; sofá compacto em linho com almofadas bege e terracota, para manter a passagem livre.</p>
+        <ul>
+          <li>Painel em laca off-white afastado da parede, com LED quente no contorno</li>
+          <li>Rack suspenso branco com frentes de carvalho claro e prateleira com LED por baixo</li>
+          <li>Sofá de 2 lugares em linho off-white, mesa lateral redonda, tapete de juta e luminária tripé <span class="nao-incluso">não incluso</span></li>
+          <li>Cortina de linho em cortineiro embutido no gesso, com LED <span class="nao-incluso">cortina não inclusa</span></li>
+          <li>Ponto de ar-condicionado sobre a porta <span class="nao-incluso">aparelho não incluso</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ambiente">
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/cozinha.jpg" alt="Cozinha planejada em L, branca, com torre de carvalho claro" data-legenda="Cozinha"></figure><figure class="quadro"><img loading="lazy" src="img/cozinha-mesa.jpg" alt="Mesa redonda com tampo de pedra junto à porta para o quintal" data-legenda="Cozinha, mesa"></figure></div>
+      <div>
+        <h3>Cozinha</h3><span class="area">10,0 m²</span>
+        <p>Cozinha planejada em L, com a pia no centro, marcenaria detalhada para fabricação e parede em porcelanato calacata até o forro. A bancada em granito preto aparece como sugestão de projeto e não integra o valor proposto.</p>
+        <ul>
+          <li>Armários brancos com puxador slim preto e torre de carvalho claro com adega; LED contínuo sob os aéreos e na vitrine</li>
+          <li>Cooktop 4 bocas, coifa de parede preta e micro-ondas em nicho <span class="nao-incluso">eletrodomésticos não inclusos</span></li>
+          <li>Mesa redonda com tampo em pedra e cadeiras de estilo moderno <span class="nao-incluso">não incluso</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ambiente">
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/quarto.jpg" alt="Quarto com cabeceira estofada bege, ripado de carvalho claro e arandelas" data-legenda="Quarto"></figure><figure class="quadro"><img loading="lazy" src="img/quarto-tv.jpg" alt="Parede da TV do quarto em carvalho claro com ripado, painel off-white e LED" data-legenda="Quarto, parede da TV"></figure><figure class="quadro"><img loading="lazy" src="img/suite.jpg" alt="Suíte com cabeceira estofada bege, ripado de carvalho claro e arandelas" data-legenda="Suíte"></figure><figure class="quadro"><img loading="lazy" src="img/suite-tv.jpg" alt="Parede da TV da suíte em carvalho claro com painel off-white retroiluminado" data-legenda="Suíte, parede da TV"></figure></div>
+      <div>
+        <h3>Quartos</h3><span class="area">quarto 7,7 m² · suíte 9,2 m²</span>
+        <p>Ripado de carvalho claro em meia altura com LED, cabeceira em painéis estofados de linho bege, cama em madeira clara, criados brancos e arandelas de cúpula. Na parede da TV, carvalho claro do piso ao forro com trecho ripado e painel off-white retroiluminado. A suíte segue o mesmo conceito, adaptado à sua parede.</p>
+        <ul>
+          <li>Painel de cabeceira com LED quente e arandelas</li>
+          <li>Painel de TV off-white retroiluminado sobre carvalho e ripado, sem rack</li>
+          <li>Ponto de ar-condicionado sobre a porta <span class="nao-incluso">aparelho não incluso</span></li>
+          <li>Blackout e voil em cortineiro embutido <span class="nao-incluso">cortinas não inclusas</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ambiente">
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/banho-suite.jpg" alt="Banho da suíte com bancada esculpida em travertino e espelho redondo" data-legenda="Banho da suíte"></figure><figure class="quadro"><img loading="lazy" src="img/banho-social.jpg" alt="Banho social com parede do box em porcelanato preto e nicho em travertino" data-legenda="Banho social"></figure></div>
+      <div>
+        <h3>Banheiros</h3><span class="area">suíte 3,4 m² · social 3,5 m²</span>
+        <p>Bancada esculpida em travertino com cuba de rampa embutida, misturador cromado e espelho redondo com LED de fundo (misturador e demais metais, sifões, válvulas e acessórios não inclusos). No box, nicho largo em pedra iluminado sobre parede em porcelanato preto com veios brancos.</p>
+        <ul>
+          <li>Paredes em porcelanato Calacata 60 × 120, parede do nicho em porcelanato preto com veios brancos 60 × 120</li>
+          <li>Piso em porcelanato 90 × 90 acetinado (nunca polido em área molhada)</li>
+          <li>Rejunte de 2 mm na cor da peça: palha nos brancos, preto no porcelanato preto</li>
+          <li>Vaso com caixa acoplada e chuveiro elétrico</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ambiente">
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/lavanderia.jpg" alt="Lavanderia com tanque duplo sobre gabinete de carvalho claro e máquina de lavar" data-legenda="Lavanderia"></figure></div>
+      <div>
+        <h3>Lavanderia</h3><span class="area">3,5 m²</span>
+        <p>Tanque duplo sobre gabinete em carvalho claro, com torneiras de parede, espaço para a máquina de lavar, armário aéreo e porcelanato na parede molhada.</p>
+        <ul>
+          <li>Tanque duplo e torneiras de parede cromadas <span class="nao-incluso">torneiras não inclusas</span></li>
+          <li>Gabinete em carvalho claro e aéreo branco com nicho</li>
+          <li>Parede do tanque e da máquina no porcelanato branco dos banheiros; demais paredes pintadas, com rodapé de 10 cm</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="guia" id="maquetes">
+  <div class="miolo">
+    <p class="rotulo">Em 3D</p>
+    <h2>Cada ambiente visto de cima</h2>
+    <p class="intro">Vistas isométricas tiradas do modelo do projeto, com as paredes da frente cortadas para mostrar o ambiente inteiro, e o mesmo acabamento fotográfico das imagens dos ambientes. Sala e quartos têm dois ângulos, para aparecer cada parede e cada móvel. Toque para ampliar. Móveis, eletrodomésticos, decoração e metais são ilustrativos e não integram o valor proposto.</p>
+    <div class="maquetes">
+    <article class="maquete">
+      <header><h3>Sala de estar</h3><span>7,1 m² · 2 vistas</span></header>
+      <div class="par">
+        <figure class="prancha"><img loading="lazy" src="img/iso-sala-1.jpg" alt="Isométrica da sala de estar, parede da tv" data-legenda="Sala de estar, parede da tv"><figcaption>Parede da TV</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-sala-2.jpg" alt="Isométrica da sala de estar, sofá e janela" data-legenda="Sala de estar, sofá e janela"><figcaption>Sofá e janela</figcaption></figure>
+      </div>
+    </article>
+    <article class="maquete">
+      <header><h3>Quarto</h3><span>7,7 m² · 2 vistas</span></header>
+      <div class="par">
+        <figure class="prancha"><img loading="lazy" src="img/iso-quarto-1.jpg" alt="Isométrica do quarto, parede da tv e guarda-roupa" data-legenda="Quarto, parede da tv e guarda-roupa"><figcaption>Parede da TV e guarda-roupa</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-quarto-2.jpg" alt="Isométrica do quarto, cama e janela" data-legenda="Quarto, cama e janela"><figcaption>Cama e janela</figcaption></figure>
+      </div>
+    </article>
+    <article class="maquete">
+      <header><h3>Suíte</h3><span>9,2 m² · 2 vistas</span></header>
+      <div class="par">
+        <figure class="prancha"><img loading="lazy" src="img/iso-suite-1.jpg" alt="Isométrica da suíte, cama e janela" data-legenda="Suíte, cama e janela"><figcaption>Cama e janela</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-suite-2.jpg" alt="Isométrica da suíte, parede da tv e guarda-roupa" data-legenda="Suíte, parede da tv e guarda-roupa"><figcaption>Parede da TV e guarda-roupa</figcaption></figure>
+      </div>
+    </article>
+      <div class="quatro">
+      <article class="maquete">
+        <header><h3>Cozinha</h3><span>10,0 m²</span></header>
+        <figure class="prancha"><img loading="lazy" src="img/iso-cozinha.jpg" alt="Isométrica da cozinha com bancada, torre da geladeira e mesa redonda" data-legenda="Cozinha"></figure>
+      </article>
+      <article class="maquete">
+        <header><h3>Banho social</h3><span>3,5 m²</span></header>
+        <figure class="prancha"><img loading="lazy" src="img/iso-banho-social.jpg" alt="Isométrica do banho social com nicho em pedra preta e bancada de travertino" data-legenda="Banho social"></figure>
+      </article>
+      <article class="maquete">
+        <header><h3>Banho da suíte</h3><span>3,4 m²</span></header>
+        <figure class="prancha"><img loading="lazy" src="img/iso-banho-suite.jpg" alt="Isométrica do banho da suíte" data-legenda="Banho da suíte"></figure>
+      </article>
+      <article class="maquete">
+        <header><h3>Lavanderia</h3><span>3,5 m²</span></header>
+        <figure class="prancha"><img loading="lazy" src="img/iso-lavanderia.jpg" alt="Isométrica da lavanderia com máquina, tanque e armário" data-legenda="Lavanderia"></figure>
+      </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guia" id="acabamentos">
+  <div class="miolo">
+    <p class="rotulo">Acabamentos e produtos</p>
+    <h2>Materiais reais, com medida</h2>
+    <p class="aviso-escopo">Bancada e mármore da cozinha, torneiras e demais metais sanitários, sifões, engates e válvulas, acessórios de banheiro, mobiliário e eletrodomésticos não integram o valor proposto: quando aparecem aqui ou nas imagens, são referência de projeto. Marcas e modelos de linha básica, a definir com o cliente. As especificações de acabamento constam do Memorial Descritivo (ver <a href="#escopo">Escopo do Fornecimento</a>).</p>
+    <div class="amostras" aria-label="Paleta da casa">
+      <span class="amostra"><i style="background:#f5f2ec"></i>Reboco off-white</span>
+      <span class="amostra"><i style="background:#8c8174"></i>Pórtico taupe</span>
+      <span class="amostra"><i style="background:#cdb894"></i>Travertino</span>
+      <span class="amostra"><i style="background:#d6ba92"></i>Carvalho claro</span>
+      <span class="amostra"><i style="background:#1d1c1a"></i>Esquadrias pretas e metais cromados</span>
+      <span class="amostra"><i style="background:#6d7350"></i>Verde-oliva (têxteis)</span>
+    </div>
+    <div class="produtos">
+      <div class="produto"><span class="onde">Banheiros</span><b>Porcelanato calacata 60 × 120</b><span>Paredes, polido</span></div>
+      <div class="produto"><span class="onde">Parede do nicho</span><b>Porcelanato preto com veios brancos 60 × 120</b><span>Destaque, polido</span></div>
+      <div class="produto"><span class="onde">Piso dos banheiros</span><b>Porcelanato calacata 90 × 90 acetinado</b><span>Antiderrapante para área molhada</span></div>
+      <div class="produto"><span class="onde">Interruptores</span><b>Interruptor inteligente de pressão, branco</b><span>Placa 4 × 2 vertical, teclas largas; 2 a 4 teclas por ambiente, automação pelo app</span></div>
+      <div class="produto"><span class="onde">Louças e metais</span><b>Vaso sanitário com caixa acoplada</b><span>Acabamentos de registro cromados <span class="nao-incluso">metais não inclusos</span></span></div>
+      <div class="produto"><span class="onde">Chuveiro</span><b>Chuveiro elétrico</b><span>Quadrado, branco</span></div>
+      <div class="produto"><span class="onde">Iluminação</span><b>Spot embutido de LED</b><span>Spots de embutir 4000 K, arandelas 3000 K</span></div>
+      <div class="produto"><span class="onde">Peitoris e soleiras</span><b>Granito preto São Gabriel</b><span>Com pingadeira</span></div>
+      <div class="produto"><span class="onde">Fachada</span><b>Porcelanato preto com veios brancos</b><span>Painel do banho da frente, polido</span></div>
+      <div class="produto"><span class="onde">Muro da frente</span><b>Portão de lâminas pretas com porta social</b><span>Arandelas no muro, padrão de energia e hidrômetro</span></div>
+      <div class="produto"><span class="onde">Banho e sala</span><b>Travertino e pedra sinterizada</b><span>Bancadas, nichos e painel de TV</span></div>
+    </div>
+    <div class="duas" style="margin-top:44px">
+      <div>
+        <p class="rotulo">Quadro de áreas</p>
+        <table class="areas">
+          <tr><td>Garagem coberta</td><td>21,7 m²</td></tr>
+          <tr><td>Cozinha</td><td>10,0 m²</td></tr>
+          <tr><td>Suíte</td><td>9,2 m²</td></tr>
+          <tr><td>Quarto</td><td>7,7 m²</td></tr>
+          <tr><td>Estar</td><td>7,1 m²</td></tr>
+          <tr><td>Circulação</td><td>7,1 m²</td></tr>
+          <tr><td>Banho social</td><td>3,5 m²</td></tr>
+          <tr><td>Lavanderia</td><td>3,5 m²</td></tr>
+          <tr><td>Banho da suíte</td><td>3,4 m²</td></tr>
+          <tr class="total"><td>Área construída</td><td>83,26 m²</td></tr>
+        </table>
+      </div>
+      <div>
+        <p class="rotulo">Como o projeto é feito</p>
+        <p class="intro" style="margin:0">Todo o projeto é desenvolvido em modelo BIM: paredes, estrutura, hidráulica, elétrica, marcenaria e móveis com medidas reais. As imagens são geradas a partir desse modelo, com acabamento fotorrealista. Os produtos citados são referências de tipo e medida. Marcas e modelos de linha básica, a definir com o cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tresd guia" id="tour3d">
+  <div class="miolo">
+    <div>
+      <p class="rotulo" style="color:var(--travertino)">Passeio virtual</p>
+      <h2>Ande pela casa no seu celular</h2>
+      <p>O modelo 3D abre direto no navegador. Gire a casa com um dedo ou entre no modo Andar e percorra os ambientes como se estivesse lá.</p>
+      <a class="botao" href="casa3d.html" target="_blank" rel="noopener">Abrir o 3D</a>
+    </div>
+    <ol>
+      <li>Toque em <b>Andar</b> e use o joystick para caminhar.</li>
+      <li>Arraste a tela para olhar em volta.</li>
+      <li>Use os atalhos para pular para cada ambiente.</li>
+      <li>"Ver por dentro" corta a casa e mostra a planta em 3D.</li>
+    </ol>
+  </div>
+</div>
+<section class="guia escopo" id="escopo">
+  <div class="miolo">
+    <p class="rotulo">Escopo do Fornecimento</p>
+    <h2>Escopo do Fornecimento<small>continuação</small></h2>
+    <p class="intro">Os itens relacionados a seguir não integram o valor proposto. A enumeração é exemplificativa do que costuma gerar dúvida e não afasta a regra geral: o que não estiver previsto na página anterior ou no memorial descritivo não compõe o escopo.</p>
+    <h3>Não incluso</h3>
+    <ul class="lista">
+      <li>Bancada e mármore da cozinha</li>
+      <li>Torneiras e demais metais sanitários</li>
+      <li>Sifões, engates flexíveis e válvulas de escoamento</li>
+      <li>Acessórios de banheiro (papeleira, saboneteira, toalheiro, cabide e similares)</li>
+      <li>Reboco, emboço e pintura dos muros laterais e de fundo, entregues chapiscados</li>
+      <li>Ligações definitivas de água e energia elétrica</li>
+      <li>Mobiliário, eletrodomésticos e decoração</li>
+      <li>Paisagismo e ajardinamento além do previsto em projeto</li>
+      <li>Custos cartorários de escritura, registro e ITBI</li>
+      <li>Tarifas, taxas e seguros exigidos pelo agente financeiro</li>
+      <li>Quaisquer modificações solicitadas após o início da obra, que serão objeto de aditivo</li>
+    </ul>
+    <h3>Memorial descritivo</h3>
+    <p class="memorial">As especificações de acabamento — revestimentos, esquadrias, louças e pintura — constam do Memorial Descritivo, documento técnico que integra esta proposta e é entregue em anexo. Em caso de divergência entre a descrição sintética na cláusula anterior e o memorial, prevalece o memorial descritivo.</p>
+    <p class="aviso-escopo" style="margin-top:14px">Marcas e modelos de linha básica, a definir com o cliente.</p>
+  </div>
+</section>
+<!-- sem-marcas (25/10/2026) -->
+</main>
+
+<footer class="guia">
+  <div class="miolo">
+    <span class="assina"><img class="infiniti-claro" src="img/logo-infiniti.png" alt=""><img class="infiniti-escuro" src="img/logo-infiniti-branca.png" alt=""><span>INFINITI Engenharia e Construtora Ltda.<small>Ariquemes-RO · projeto e construção</small></span></span>
+    <span><a href="https://www.instagram.com/infinitiengenharia/" target="_blank" rel="noopener">Instagram @infinitiengenharia</a></span>
+    <span>Casa Sirius · 83,26 m² · padrão alto · estudo de projeto</span>
+    <span>Imagens ilustrativas produzidas a partir do modelo do projeto. Medidas e especificações finais no projeto executivo e no Memorial Descritivo. Móveis, eletrodomésticos, decoração, bancada da cozinha e metais sanitários mostrados são ilustrativos e não integram o valor proposto.</span>
+  </div>
+</footer>
+
+<div id="zoom" hidden><div><img alt=""><p></p></div></div>
+<script>
+(function () {
+  var z = document.getElementById("zoom"), zi = z.querySelector("img"), zp = z.querySelector("p");
+  document.querySelectorAll("img[data-legenda]").forEach(function (im) {
+    im.addEventListener("click", function () { zi.src = im.src; zi.alt = im.alt; zp.textContent = im.dataset.legenda; z.hidden = false; });
+  });
+  z.addEventListener("click", function () { z.hidden = true; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") z.hidden = true; });
+})();
+</script>
+
+</body>
+</html>
