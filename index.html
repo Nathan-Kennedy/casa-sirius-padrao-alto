@@ -170,10 +170,11 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
 .aviso-escopo a { color: var(--tinta); }
 @media (max-width: 820px) { .escopo .lista { grid-template-columns: minmax(0, 1fr); } }
 
-/* W2: celular */
+/* W2v2: celular */
 @media (max-width: 820px) {
   header.topo, .topo { position: sticky; top: 0; z-index: 50; }
   .topo .miolo { padding-block: 8px 0; }
+  section[id], [id].guia, .tela [id] { scroll-margin-top: 110px; }      /* o cabecalho fixo nao cobre o titulo ao tocar no menu */
   .topo nav { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto; gap: 2px; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-inline: -4px; }
   .topo nav::-webkit-scrollbar { display: none; }
   .topo nav a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; white-space: nowrap; }
@@ -234,9 +235,9 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     <p class="rotulo">Planta</p>
     <h2>Uma planta pensada para aproveitar cada espaço</h2>
     <div class="planta">
-      <figure><img loading="lazy" src="img/planta-humanizada.jpg" alt="Planta baixa humanizada do lote 6 × 30 com a casa, a garagem, o corredor lateral e o quintal" data-legenda="Planta baixa humanizada"></figure>
+      <figure><img loading="lazy" src="img/planta-humanizada.jpg" alt="Planta humanizada com o jardim, os caminhos do dia a dia e o nome e a área de cada ambiente" data-legenda="Planta humanizada com circulação"></figure>
       <div class="lado">
-        <p class="intro">Conheça a distribuição da casa na planta humanizada, gerada diretamente do modelo do projeto. As paredes aparecem em preto; pisos e móveis mostram as cores reais dos acabamentos escolhidos. Da rua ao fundo, veja como os espaços se organizam:</p>
+        <p class="intro">Na planta humanizada, gerada do modelo do projeto, as linhas tracejadas mostram os caminhos do dia a dia, e cada ambiente traz o nome e a área. Da rua ao fundo:</p>
         <ol>
           <li>Calçada com piso tátil, muro com portão e porta social, rampa em placas de concreto</li>
           <li>Garagem coberta e, ao lado, o banho da suíte</li>
