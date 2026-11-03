@@ -169,6 +169,21 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
 .aviso-escopo { font-size: 0.88rem; color: var(--tinta-2); max-width: 72ch; margin: -6px 0 24px; }
 .aviso-escopo a { color: var(--tinta); }
 @media (max-width: 820px) { .escopo .lista { grid-template-columns: minmax(0, 1fr); } }
+
+/* W2: celular */
+@media (max-width: 820px) {
+  header.topo, .topo { position: sticky; top: 0; z-index: 50; }
+  .topo .miolo { padding-block: 8px 0; }
+  .topo nav { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto; gap: 2px; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-inline: -4px; }
+  .topo nav::-webkit-scrollbar { display: none; }
+  .topo nav a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; white-space: nowrap; }
+  .nao-incluso { font-size: 12px !important; }
+  figcaption, small, .assina small { font-size: max(12.5px, 0.8em) !important; }
+  footer a, .voltar a { display: inline-flex; align-items: center; min-height: 44px; }
+  .cor { min-height: 44px; }
+  .comparar input { touch-action: pan-y; }
+  img { height: auto; }
+}
 </style>
 </head>
 <body>
@@ -185,7 +200,7 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
 <main>
 <div class="capa guia" id="inicio">
   <div class="miolo">
-    <figure><img src="img/fachada-frente.jpg" alt="Fachada frontal da casa, com muro, portão preto de lâminas e painel de porcelanato preto com veios brancos" data-legenda="Fachada frontal"></figure>
+    <figure><img src="img/fachada-frente.jpg" srcset="img/m/fachada-frente.jpg 900w, img/fachada-frente.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Fachada frontal da casa, com muro, portão preto de lâminas e painel de porcelanato preto com veios brancos" data-legenda="Fachada frontal"></figure>
     <div class="capa-texto">
       <h1>Viva o conforto de uma casa térrea <span>contemporânea</span> em lote 6 × 30</h1>
       <p>Uma casa contemporânea, com conforto e praticidade em cada ambiente. Na fachada, pórtico em volume único, painel de porcelanato preto com veios brancos, esquadrias pretas e muro com portão de lâminas. A garagem coberta completa a chegada. Por dentro, cozinha planejada em L, suíte com banho em pedra e soluções pensadas para aproveitar o tamanho real de cada cômodo.</p>
@@ -205,11 +220,11 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     <h2>Uma fachada que valoriza a chegada</h2>
     <p class="intro">A entrada e a garagem ganham destaque com o pórtico. Na parede do banho da frente, o painel de porcelanato preto valoriza a composição da fachada. O muro frontal reúne portão de lâminas horizontais pretas com porta social, padrão de energia e hidrômetro. Placas de concreto com grama entre elas compõem a rampa, enquanto as arandelas iluminam o muro e a garagem. A calçada conta com piso tátil direcional e de alerta. Nas imagens, os muros aparecem rebocados e pintados; os muros laterais e de fundo são entregues chapiscados, sem reboco, emboço nem pintura.</p>
     <div class="grade-fachada">
-      <figure class="quadro"><img loading="lazy" src="img/fachada-esquerda.jpg" alt="Fachada vista pela esquerda" data-legenda="Fachada, vista pela esquerda"><figcaption>Pela esquerda, o pórtico e o painel preto dão presença à fachada.</figcaption></figure>
-      <figure class="quadro"><img loading="lazy" src="img/fachada-direita.jpg" alt="Fachada vista pela direita" data-legenda="Fachada, vista pela direita"><figcaption>Pela direita, veja o acesso, o muro da frente e o padrão de energia.</figcaption></figure>
-      <figure class="quadro"><img loading="lazy" src="img/vista-aerea.jpg" alt="Vista aérea da casa no lote" data-legenda="Vista aérea"><figcaption>Veja como a casa se distribui no lote de 6 × 30 m.</figcaption></figure>
-      <figure class="quadro"><img loading="lazy" src="img/garagem.jpg" alt="Garagem coberta e entrada da casa" data-legenda="Garagem e entrada"><figcaption>Garagem coberta (21,7 m²) e porta de entrada: praticidade desde a chegada. O piso em porcelanato 80 × 80 claro tem acabamento natural antiderrapante, próprio para veículos.</figcaption></figure>
-      <figure class="quadro" style="grid-column:1/-1"><img loading="lazy" src="img/fachada-noite.jpg" alt="Fachada à noite, com arandelas e iluminação acesas" data-legenda="Fachada à noite"><figcaption>À noite, as arandelas e a luz de embutir acesas valorizam a fachada.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/fachada-esquerda.jpg" srcset="img/m/fachada-esquerda.jpg 900w, img/fachada-esquerda.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Fachada vista pela esquerda" data-legenda="Fachada, vista pela esquerda"><figcaption>Pela esquerda, o pórtico e o painel preto dão presença à fachada.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/fachada-direita.jpg" srcset="img/m/fachada-direita.jpg 900w, img/fachada-direita.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Fachada vista pela direita" data-legenda="Fachada, vista pela direita"><figcaption>Pela direita, veja o acesso, o muro da frente e o padrão de energia.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/vista-aerea.jpg" srcset="img/m/vista-aerea.jpg 900w, img/vista-aerea.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Vista aérea da casa no lote" data-legenda="Vista aérea"><figcaption>Veja como a casa se distribui no lote de 6 × 30 m.</figcaption></figure>
+      <figure class="quadro"><img loading="lazy" src="img/garagem.jpg" srcset="img/m/garagem.jpg 900w, img/garagem.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Garagem coberta e entrada da casa" data-legenda="Garagem e entrada"><figcaption>Garagem coberta (21,7 m²) e porta de entrada: praticidade desde a chegada. O piso em porcelanato 80 × 80 claro tem acabamento natural antiderrapante, próprio para veículos.</figcaption></figure>
+      <figure class="quadro" style="grid-column:1/-1"><img loading="lazy" src="img/fachada-noite.jpg" srcset="img/m/fachada-noite.jpg 900w, img/fachada-noite.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Fachada à noite, com arandelas e iluminação acesas" data-legenda="Fachada à noite"><figcaption>À noite, as arandelas e a luz de embutir acesas valorizam a fachada.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -246,8 +261,8 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
 
     <article class="ambiente">
       <div class="fotos">
-        <figure class="quadro"><img loading="lazy" src="img/sala-tv.jpg" alt="Sala de estar com painel off-white retroiluminado, prateleira e rack em carvalho claro" data-legenda="Sala de estar, parede da TV"></figure>
-        <figure class="quadro"><img loading="lazy" src="img/sala-sofa.jpg" alt="Sala de estar com sofá de linho e cortina" data-legenda="Sala de estar, sofá"></figure>
+        <figure class="quadro"><img loading="lazy" src="img/sala-tv.jpg" srcset="img/m/sala-tv.jpg 900w, img/sala-tv.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Sala de estar com painel off-white retroiluminado, prateleira e rack em carvalho claro" data-legenda="Sala de estar, parede da TV"></figure>
+        <figure class="quadro"><img loading="lazy" src="img/sala-sofa.jpg" srcset="img/m/sala-sofa.jpg 900w, img/sala-sofa.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Sala de estar com sofá de linho e cortina" data-legenda="Sala de estar, sofá"></figure>
       </div>
       <div>
         <h3>Sala de estar</h3><span class="area">7,1 m²</span>
@@ -263,7 +278,7 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     </article>
 
     <article class="ambiente">
-      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/cozinha.jpg" alt="Cozinha planejada em L, branca, com torre de carvalho claro" data-legenda="Cozinha"></figure><figure class="quadro"><img loading="lazy" src="img/cozinha-mesa.jpg" alt="Mesa redonda com tampo de pedra junto à porta para o quintal" data-legenda="Cozinha, mesa"></figure></div>
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/cozinha.jpg" srcset="img/m/cozinha.jpg 900w, img/cozinha.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Cozinha planejada em L, branca, com torre de carvalho claro" data-legenda="Cozinha"></figure><figure class="quadro"><img loading="lazy" src="img/cozinha-mesa.jpg" srcset="img/m/cozinha-mesa.jpg 900w, img/cozinha-mesa.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Mesa redonda com tampo de pedra junto à porta para o quintal" data-legenda="Cozinha, mesa"></figure></div>
       <div>
         <h3>Cozinha</h3><span class="area">10,0 m²</span>
         <p>A cozinha planejada em L traz praticidade à rotina, com a pia no centro e marcenaria detalhada para fabricação. O porcelanato calacata reveste a parede até o forro e valoriza o acabamento. A bancada em granito preto aparece como sugestão de projeto e não integra o valor proposto.</p>
@@ -276,7 +291,7 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     </article>
 
     <article class="ambiente">
-      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/quarto.jpg" alt="Quarto com cabeceira estofada bege, ripado de carvalho claro e arandelas" data-legenda="Quarto"></figure><figure class="quadro"><img loading="lazy" src="img/quarto-tv.jpg" alt="Parede da TV do quarto em carvalho claro com ripado, painel off-white e LED" data-legenda="Quarto, parede da TV"></figure><figure class="quadro"><img loading="lazy" src="img/suite.jpg" alt="Suíte com cabeceira estofada bege, ripado de carvalho claro e arandelas" data-legenda="Suíte"></figure><figure class="quadro"><img loading="lazy" src="img/suite-tv.jpg" alt="Parede da TV da suíte em carvalho claro com painel off-white retroiluminado" data-legenda="Suíte, parede da TV"></figure></div>
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/quarto.jpg" srcset="img/m/quarto.jpg 900w, img/quarto.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Quarto com cabeceira estofada bege, ripado de carvalho claro e arandelas" data-legenda="Quarto"></figure><figure class="quadro"><img loading="lazy" src="img/quarto-tv.jpg" srcset="img/m/quarto-tv.jpg 900w, img/quarto-tv.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Parede da TV do quarto em carvalho claro com ripado, painel off-white e LED" data-legenda="Quarto, parede da TV"></figure><figure class="quadro"><img loading="lazy" src="img/suite.jpg" srcset="img/m/suite.jpg 900w, img/suite.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Suíte com cabeceira estofada bege, ripado de carvalho claro e arandelas" data-legenda="Suíte"></figure><figure class="quadro"><img loading="lazy" src="img/suite-tv.jpg" srcset="img/m/suite-tv.jpg 900w, img/suite-tv.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Parede da TV da suíte em carvalho claro com painel off-white retroiluminado" data-legenda="Suíte, parede da TV"></figure></div>
       <div>
         <h3>Quartos</h3><span class="area">quarto 7,7 m² · suíte 9,2 m²</span>
         <p>Texturas e iluminação compõem ambientes acolhedores para descansar. A proposta combina ripado de carvalho claro em meia altura com LED, cabeceira em painéis estofados de linho bege, cama em madeira clara, criados brancos e arandelas de cúpula. Na parede da TV, o carvalho claro vai do piso ao forro, com trecho ripado e painel off-white retroiluminado. Na suíte, o mesmo conceito se adapta à sua parede.</p>
@@ -290,7 +305,7 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     </article>
 
     <article class="ambiente">
-      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/banho-suite.jpg" alt="Banho da suíte com nicho iluminado em pedra sobre porcelanato preto com veios brancos" data-legenda="Banho da suíte"></figure><figure class="quadro"><img loading="lazy" src="img/banho-social.jpg" alt="Banho social com parede do box em porcelanato preto e nicho em travertino" data-legenda="Banho social"></figure></div>
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/banho-suite.jpg" srcset="img/m/banho-suite.jpg 900w, img/banho-suite.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Banho da suíte com nicho iluminado em pedra sobre porcelanato preto com veios brancos" data-legenda="Banho da suíte"></figure><figure class="quadro"><img loading="lazy" src="img/banho-social.jpg" srcset="img/m/banho-social.jpg 900w, img/banho-social.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Banho social com parede do box em porcelanato preto e nicho em travertino" data-legenda="Banho social"></figure></div>
       <div>
         <h3>Banheiros</h3><span class="area">suíte 3,4 m² · social 3,5 m²</span>
         <p>O travertino dá destaque à bancada esculpida com cuba de rampa embutida, acompanhada de misturador cromado e espelho retangular com moldura de LED (misturador e demais metais, sifões, válvulas e acessórios não inclusos). No box, o nicho largo em pedra iluminado facilita a organização e valoriza a parede em porcelanato preto com veios brancos.</p>
@@ -304,7 +319,7 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     </article>
 
     <article class="ambiente">
-      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/lavanderia.jpg" alt="Lavanderia com tanque duplo sobre gabinete de carvalho claro e máquina de lavar" data-legenda="Lavanderia"></figure></div>
+      <div class="fotos"><figure class="quadro"><img loading="lazy" src="img/lavanderia.jpg" srcset="img/m/lavanderia.jpg 900w, img/lavanderia.jpg 1672w" sizes="(max-width: 820px) 100vw, 1200px" alt="Lavanderia com tanque duplo sobre gabinete de carvalho claro e máquina de lavar" data-legenda="Lavanderia"></figure></div>
       <div>
         <h3>Lavanderia</h3><span class="area">3,5 m²</span>
         <p>Praticidade para cuidar da casa, com espaço para lavar e organizar. A lavanderia reúne tanque duplo sobre gabinete em carvalho claro, torneiras de parede, espaço para a máquina de lavar e armário aéreo. O porcelanato reveste a parede molhada.</p>
@@ -327,40 +342,40 @@ footer .miolo { display: flex; justify-content: space-between; gap: 20px; flex-w
     <article class="maquete">
       <header><h3>Sala de estar</h3><span>7,1 m² · 2 vistas</span></header>
       <div class="par">
-        <figure class="prancha"><img loading="lazy" src="img/iso-sala-1.jpg" alt="Vista isométrica da sala de estar, com a parede da TV" data-legenda="Sala de estar, vista da parede da TV"><figcaption>Parede da TV</figcaption></figure>
-        <figure class="prancha"><img loading="lazy" src="img/iso-sala-2.jpg" alt="Isométrica da sala de estar, sofá e janela" data-legenda="Sala de estar, sofá e janela"><figcaption>Sofá e janela</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-sala-1.jpg" srcset="img/m/iso-sala-1.jpg 900w, img/iso-sala-1.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Vista isométrica da sala de estar, com a parede da TV" data-legenda="Sala de estar, vista da parede da TV"><figcaption>Parede da TV</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-sala-2.jpg" srcset="img/m/iso-sala-2.jpg 900w, img/iso-sala-2.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica da sala de estar, sofá e janela" data-legenda="Sala de estar, sofá e janela"><figcaption>Sofá e janela</figcaption></figure>
       </div>
     </article>
     <article class="maquete">
       <header><h3>Quarto</h3><span>7,7 m² · 2 vistas</span></header>
       <div class="par">
-        <figure class="prancha"><img loading="lazy" src="img/iso-quarto-1.jpg" alt="Vista isométrica do quarto, com a parede da TV e o guarda-roupa" data-legenda="Quarto, vista da parede da TV e do guarda-roupa"><figcaption>Parede da TV e guarda-roupa</figcaption></figure>
-        <figure class="prancha"><img loading="lazy" src="img/iso-quarto-2.jpg" alt="Isométrica do quarto, cama e janela" data-legenda="Quarto, cama e janela"><figcaption>Cama e janela</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-quarto-1.jpg" srcset="img/m/iso-quarto-1.jpg 900w, img/iso-quarto-1.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Vista isométrica do quarto, com a parede da TV e o guarda-roupa" data-legenda="Quarto, vista da parede da TV e do guarda-roupa"><figcaption>Parede da TV e guarda-roupa</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-quarto-2.jpg" srcset="img/m/iso-quarto-2.jpg 900w, img/iso-quarto-2.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica do quarto, cama e janela" data-legenda="Quarto, cama e janela"><figcaption>Cama e janela</figcaption></figure>
       </div>
     </article>
     <article class="maquete">
       <header><h3>Suíte</h3><span>9,2 m² · 2 vistas</span></header>
       <div class="par">
-        <figure class="prancha"><img loading="lazy" src="img/iso-suite-1.jpg" alt="Isométrica da suíte, cama e janela" data-legenda="Suíte, cama e janela"><figcaption>Cama e janela</figcaption></figure>
-        <figure class="prancha"><img loading="lazy" src="img/iso-suite-2.jpg" alt="Vista isométrica da suíte, com a parede da TV e o guarda-roupa" data-legenda="Suíte, vista da parede da TV e do guarda-roupa"><figcaption>Parede da TV e guarda-roupa</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-suite-1.jpg" srcset="img/m/iso-suite-1.jpg 900w, img/iso-suite-1.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica da suíte, cama e janela" data-legenda="Suíte, cama e janela"><figcaption>Cama e janela</figcaption></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-suite-2.jpg" srcset="img/m/iso-suite-2.jpg 900w, img/iso-suite-2.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Vista isométrica da suíte, com a parede da TV e o guarda-roupa" data-legenda="Suíte, vista da parede da TV e do guarda-roupa"><figcaption>Parede da TV e guarda-roupa</figcaption></figure>
       </div>
     </article>
       <div class="quatro">
       <article class="maquete">
         <header><h3>Cozinha</h3><span>10,0 m²</span></header>
-        <figure class="prancha"><img loading="lazy" src="img/iso-cozinha.jpg" alt="Isométrica da cozinha com bancada, torre da geladeira e mesa redonda" data-legenda="Cozinha"></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-cozinha.jpg" srcset="img/m/iso-cozinha.jpg 900w, img/iso-cozinha.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica da cozinha com bancada, torre da geladeira e mesa redonda" data-legenda="Cozinha"></figure>
       </article>
       <article class="maquete">
         <header><h3>Banho social</h3><span>3,5 m²</span></header>
-        <figure class="prancha"><img loading="lazy" src="img/iso-banho-social.jpg" alt="Isométrica do banho social com nicho em pedra preta e bancada de travertino" data-legenda="Banho social"></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-banho-social.jpg" srcset="img/m/iso-banho-social.jpg 900w, img/iso-banho-social.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica do banho social com nicho em pedra preta e bancada de travertino" data-legenda="Banho social"></figure>
       </article>
       <article class="maquete">
         <header><h3>Banho da suíte</h3><span>3,4 m²</span></header>
-        <figure class="prancha"><img loading="lazy" src="img/iso-banho-suite.jpg" alt="Isométrica do banho da suíte" data-legenda="Banho da suíte"></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-banho-suite.jpg" srcset="img/m/iso-banho-suite.jpg 900w, img/iso-banho-suite.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica do banho da suíte" data-legenda="Banho da suíte"></figure>
       </article>
       <article class="maquete">
         <header><h3>Lavanderia</h3><span>3,5 m²</span></header>
-        <figure class="prancha"><img loading="lazy" src="img/iso-lavanderia.jpg" alt="Isométrica da lavanderia com máquina, tanque e armário" data-legenda="Lavanderia"></figure>
+        <figure class="prancha"><img loading="lazy" src="img/iso-lavanderia.jpg" srcset="img/m/iso-lavanderia.jpg 900w, img/iso-lavanderia.jpg 1254w" sizes="(max-width: 820px) 100vw, 1200px" alt="Isométrica da lavanderia com máquina, tanque e armário" data-legenda="Lavanderia"></figure>
       </article>
       </div>
     </div>
